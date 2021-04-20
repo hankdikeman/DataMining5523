@@ -11,7 +11,7 @@ import os
 # helper function to load label data from CSV and trim header and label column
 def LoadImageFromCSV(fname):
     # load filename using numpy builtin
-    rawlabels = np.genfromtxt(fname, delimiter=',')
+    rawlabels = np.genfromtxt(fname, dtype=np.float32, delimiter=',')
     # trim header and column label
     labels = rawlabels[1:,1:]
     # return trimmed label data array
